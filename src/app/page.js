@@ -39,8 +39,8 @@ export default function Home() {
   return (
     <div className="bg-background font-body-md text-on-surface min-h-screen relative selection:bg-secondary-container selection:text-on-secondary-container">
       {/* HEADER / NAVIGATION */}
-      <header className="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-outline-variant/20">
-        <div className="h-20 max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+      <header className="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-outline-variant/20 mobile-header">
+        <div className="h-20 max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-4 mobile-header-inner">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 group">
             <img
@@ -181,19 +181,19 @@ export default function Home() {
       </header>
 
       {/* MAIN CONTENT WRAPPER */}
-      <main className="w-full pt-20 bg-background">
+      <main className="w-full pt-20 bg-background mobile-main">
         <div className="flex flex-col w-full">
           {/* =========================================
               SECTION 1: HERO
           ========================================== */}
           <section
-            className="w-full bg-surface-container-lowest py-20 lg:py-24"
+            className="w-full bg-surface-container-lowest py-20 lg:py-24 mobile-hero-section"
             id="hero"
           >
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-20">
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-20 mobile-hero-shell">
               {/* Top Grid: Copy & Hero Imagery */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                <div className="lg:col-span-7 flex flex-col gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mobile-hero-grid">
+                <div className="lg:col-span-7 flex flex-col gap-6 mobile-hero-copy">
                   {/* <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide uppercase">
                     <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
                     Premier Educational Network • Lucknow
@@ -211,7 +211,7 @@ export default function Home() {
                   </p>
 
                   {/* Action Button Cluster */}
-                  <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <div className="flex flex-wrap items-center gap-3.5 pt-2 mobile-hero-actions">
                     <a
                       className="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-lg text-label-lg px-7 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold"
                       href="#request-tutor"
@@ -232,7 +232,7 @@ export default function Home() {
                     </a>
                     <a
                       className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-lg text-label-lg px-6 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold"
-                      href="https://wa.me/919452000000"
+                      href="https://wa.me/0000000000"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -244,7 +244,7 @@ export default function Home() {
                   </div>
 
                   {/* Trust Credibility Bar */}
-                  <div className="mt-4 p-4 rounded-2xl bg-surface-container-low flex flex-wrap items-center gap-4 text-on-surface">
+                  <div className="mt-4 p-4 rounded-2xl bg-surface-container-low flex flex-wrap items-center gap-4 text-on-surface mobile-trust-bar">
                     <div className="flex items-center gap-2 font-label-md text-label-md text-primary font-bold">
                       <span className="material-symbols-outlined text-secondary">
                         verified_user
@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
 
                 {/* Hero Graphic / Image */}
-                <div className="lg:col-span-5 relative">
+                <div className="lg:col-span-5 relative mobile-hero-visual">
                   <div className="relative rounded-3xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
                     <img
                       className="w-full h-[460px] object-cover object-center"
@@ -1192,7 +1192,7 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-3">
                     <a
                       className="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-3 rounded-xl transition-all font-semibold hover:bg-primary-container"
-                      href="tel:+919452000000"
+                      href="tel:+0000000000"
                     >
                       <span className="material-symbols-outlined text-[18px]">
                         call
@@ -1201,7 +1201,7 @@ export default function Home() {
                     </a>
                     <a
                       className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md text-label-md px-5 py-3 rounded-xl transition-all font-semibold"
-                      href="https://wa.me/919452000000"
+                      href="https://wa.me/0000000000"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -1425,7 +1425,7 @@ export default function Home() {
                       </p>
                       <a
                         className="font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors"
-                        href="tel:+919452000000"
+                        href="tel:+0000000000"
                       >
                         +91 94520 XXXXX
                       </a>
@@ -1447,7 +1447,7 @@ export default function Home() {
                       </p>
                       <a
                         className="font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors"
-                        href="https://wa.me/919452000000"
+                        href="https://wa.me/0000000000"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -1590,7 +1590,7 @@ export default function Home() {
         <a
           aria-label="Call Support"
           className="flex items-center gap-2 bg-surface-container-lowest text-primary hover:bg-surface-container-high hover:text-on-surface px-4 py-3 rounded-full shadow-[0_4px_12px_rgba(27,42,51,0.08)] transition-all border border-outline-variant/30 hover:scale-105"
-          href="tel:+919452000000"
+          href="tel:+0000000000"
         >
           <span className="material-symbols-outlined text-[20px]">call</span>
           <span className="hidden md:inline font-label-sm text-label-sm font-semibold">
@@ -1600,7 +1600,7 @@ export default function Home() {
         <a
           aria-label="WhatsApp Instant Chat"
           className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-[0_4px_16px_rgba(0,64,25,0.2)] transition-all hover:scale-105 font-semibold"
-          href="https://wa.me/919452000000"
+          href="https://wa.me/0000000000"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1612,8 +1612,8 @@ export default function Home() {
       </aside>
 
       {/* FOOTER */}
-      <footer className="w-full bg-surface-container-low pt-16 pb-12 border-t border-outline-variant/30">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+      <footer className="w-full bg-surface-container-low pt-16 pb-12 border-t border-outline-variant/30 mobile-footer">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-12 mobile-footer-inner">
           {/* Main Footer Multi-Column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             {/* Column 1: Brand & Overview (Spans 2 columns on lg) */}
@@ -1635,14 +1635,14 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-primary text-[18px]">call</span>
-                  <a href="tel:+919452000000" className="hover:text-primary transition-colors font-medium">
+                  <a href="tel:+0000000000" className="hover:text-primary transition-colors font-medium">
                     +91 94520 XXXXX
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-[#25D366] text-[18px]">chat</span>
                   <a
-                    href="https://wa.me/919452000000"
+                    href="https://wa.me/0000000000"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors font-medium"

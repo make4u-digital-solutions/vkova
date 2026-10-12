@@ -146,3 +146,128 @@ body {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .mobile-header-inner {
+    height: 72px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .mobile-header-inner > a {
+    max-width: 140px;
+  }
+
+  .mobile-header-inner img {
+    height: 44px !important;
+  }
+
+  .mobile-header-inner > div {
+    gap: 8px;
+  }
+
+  .mobile-hero-section {
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .mobile-hero-shell {
+    gap: 24px !important;
+  }
+
+  .mobile-hero-grid {
+    gap: 24px !important;
+  }
+
+  .mobile-hero-copy {
+    gap: 14px !important;
+  }
+
+  .mobile-hero-copy h1 {
+    font-size: clamp(2.4rem, 10vw, 3.3rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -0.05em !important;
+  }
+
+  .mobile-hero-copy p:nth-of-type(2) {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .mobile-hero-copy > p:last-of-type {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .mobile-hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 12px !important;
+  }
+
+  .mobile-hero-actions a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .mobile-trust-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .mobile-trust-bar > * {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mobile-hero-visual img {
+    height: 280px !important;
+  }
+
+  .mobile-main section {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .mobile-footer {
+    padding-top: 56px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .mobile-footer-inner {
+    gap: 28px !important;
+  }
+
+  .mobile-footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
