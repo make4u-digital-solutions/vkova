@@ -41,11 +41,28 @@
   --foreground: #0e1d26;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
-  overscroll-behavior: none;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  overscroll-behavior-y: none;
+}
+
+/* Prevent auto-zoom on iOS when focusing inputs */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* Material Design Typography Classes matching Stitch Design */

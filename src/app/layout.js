@@ -24,11 +24,17 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${inter.variable} scroll-smooth antialiased`}
+      className={`${dmSans.variable} ${inter.variable} scroll-smooth antialiased overflow-x-hidden`}
     >
       <head>
         <link rel="icon" href="/vkova_logo.jpeg" type="image/jpeg" />
@@ -37,7 +43,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
       </head>
-      <body className="bg-background text-on-surface min-h-screen relative font-sans">
+      <body className="bg-background text-on-surface min-h-screen relative font-sans overflow-x-hidden w-full">
         {children}
       </body>
     </html>

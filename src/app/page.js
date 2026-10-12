@@ -37,18 +37,17 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-background font-body-md text-on-surface min-h-screen relative selection:bg-secondary-container selection:text-on-secondary-container">
+    <div className="bg-background font-body-md text-on-surface min-h-screen relative w-full overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
       {/* HEADER / NAVIGATION */}
       <header className="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-outline-variant/20">
-        <div className="h-20 max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+        <div className="h-16 sm:h-20 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 group">
+          <a href="#hero" className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <img
               alt="VKOVA Official Logo"
-              className="h-17 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-10 sm:h-14 md:h-16 w-auto max-w-[140px] sm:max-w-none object-contain transition-transform group-hover:scale-105"
               src="/VKOVA_Logo.png"
             />
-            
           </a>
 
           {/* Desktop Nav */}
@@ -86,7 +85,7 @@ export default function Home() {
           </nav>
 
           {/* Right Action Cluster */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               className="hidden sm:inline-flex items-center justify-center bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim font-label-md text-label-md px-4 py-2.5 rounded-xl transition-all shadow-[0_1px_3px_rgba(27,42,51,0.04)] font-semibold"
               href="#request-tutor"
@@ -101,7 +100,7 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0 text-on-primary hover:opacity-90 transition-opacity"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary flex items-center justify-center shrink-0 text-on-primary hover:opacity-90 transition-opacity"
               aria-label="User Profile / Contact"
             >
               <span className="material-symbols-outlined text-on-primary text-[18px]">
@@ -112,7 +111,7 @@ export default function Home() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-primary hover:bg-surface-container transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-primary hover:bg-surface-container active:scale-95 transition-all"
               aria-label="Toggle Navigation Menu"
             >
               <span className="material-symbols-outlined text-[24px]">
@@ -124,7 +123,7 @@ export default function Home() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-surface border-b border-outline-variant/30 px-6 py-4 flex flex-col gap-3 shadow-lg">
+          <div className="lg:hidden bg-surface border-b border-outline-variant/30 px-4 sm:px-6 py-4 flex flex-col gap-3 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top-2">
             <a
               onClick={() => setMobileMenuOpen(false)}
               className="font-label-md text-label-md text-primary font-bold py-2 border-b border-surface-container"
@@ -160,17 +159,17 @@ export default function Home() {
             >
               Contact
             </a>
-            <div className="flex flex-col gap-2 pt-2">
+            <div className="flex flex-col gap-2.5 pt-2">
               <a
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-center bg-secondary-container text-on-secondary-container font-label-md px-4 py-2.5 rounded-xl font-semibold"
+                className="text-center bg-secondary-container text-on-secondary-container font-label-md px-4 py-3 rounded-xl font-semibold shadow-xs"
                 href="#request-tutor"
               >
                 Request a Tutor
               </a>
               <a
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-center bg-primary-container text-on-primary font-label-md px-4 py-2.5 rounded-xl font-semibold"
+                className="text-center bg-primary-container text-on-primary font-label-md px-4 py-3 rounded-xl font-semibold shadow-xs"
                 href="#join-tutor"
               >
                 Join as a Tutor
@@ -181,54 +180,50 @@ export default function Home() {
       </header>
 
       {/* MAIN CONTENT WRAPPER */}
-      <main className="w-full pt-20 bg-background">
+      <main className="w-full pt-16 sm:pt-20 bg-background overflow-x-hidden">
         <div className="flex flex-col w-full">
           {/* =========================================
               SECTION 1: HERO
           ========================================== */}
           <section
-            className="w-full bg-surface-container-lowest py-20 lg:py-24"
+            className="w-full bg-surface-container-lowest py-10 sm:py-16 lg:py-24"
             id="hero"
           >
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-20">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-20">
               {/* Top Grid: Copy & Hero Imagery */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                <div className="lg:col-span-7 flex flex-col gap-6">
-                  {/* <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide uppercase">
-                    <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                    Premier Educational Network • Lucknow
-                  </div> */}
-                  <h1 className="font-display-hero text-headline-xl lg:text-display-hero text-primary tracking-tight leading-[1.1] font-bold">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6">
+                  <h1 className="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-display-hero text-primary tracking-tight leading-[1.15] sm:leading-[1.1] font-bold break-words">
                     Find the Right Tutor in Lucknow
                   </h1>
-                  <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                  <p className="font-body-md sm:font-body-lg text-sm sm:text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
                     VKOVA connects students with verified, compassionate home tutors
                     across Lucknow and conducts rigorous, concept-focused coaching
                     classes designed for academic breakthroughs.
                   </p>
 
                   {/* Action Button Cluster */}
-                  <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 pt-2">
                     <a
-                      className="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-lg text-label-lg px-7 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold"
+                      className="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-md sm:font-label-lg px-5 py-3 sm:px-7 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold text-center"
                       href="#request-tutor"
                     >
                       Request a Tutor
                     </a>
                     <a
-                      className="inline-flex items-center justify-center bg-transparent text-primary hover:bg-primary-container/10 font-label-lg text-label-lg px-6 py-3.5 rounded-2xl transition-all duration-200 font-semibold"
+                      className="inline-flex items-center justify-center bg-surface-container-high/60 sm:bg-transparent text-primary hover:bg-primary-container/10 font-label-md sm:font-label-lg px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl sm:rounded-2xl transition-all duration-200 font-semibold text-center border border-outline-variant/30 sm:border-transparent"
                       href="#join-tutor"
                     >
                       Join as a Tutor
                     </a>
                     <a
-                      className="inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-6 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold"
+                      className="inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-md sm:font-label-lg px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold text-center"
                       href="#coaching"
                     >
                       Enquire for Admission
                     </a>
                     <a
-                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-lg text-label-lg px-6 py-3.5 rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold"
+                      className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md sm:font-label-lg px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-semibold text-center"
                       href="https://wa.me/919452000000"
                       rel="noopener noreferrer"
                       target="_blank"
@@ -241,47 +236,47 @@ export default function Home() {
                   </div>
 
                   {/* Trust Credibility Bar */}
-                  <div className="mt-4 p-4 rounded-2xl bg-surface-container-low flex flex-wrap items-center gap-4 text-on-surface">
-                    <div className="flex items-center gap-2 font-label-md text-label-md text-primary font-bold">
-                      <span className="material-symbols-outlined text-secondary">
+                  <div className="mt-2 sm:mt-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface-container-low flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-on-surface">
+                    <div className="flex items-center gap-1.5 font-label-md text-xs sm:text-sm text-primary font-bold">
+                      <span className="material-symbols-outlined text-secondary text-[18px]">
                         verified_user
                       </span>
                       <span>Classes 1st to 12th</span>
                     </div>
-                    <span className="text-outline-variant">•</span>
-                    <span className="font-label-md text-label-md text-on-surface-variant font-medium">
+                    <span className="hidden sm:inline text-outline-variant">•</span>
+                    <span className="px-2.5 py-0.5 rounded-lg bg-surface-container-lowest font-medium text-xs sm:text-sm text-on-surface-variant border border-outline-variant/20">
                       CBSE Board
                     </span>
-                    <span className="text-outline-variant">•</span>
-                    <span className="font-label-md text-label-md text-on-surface-variant font-medium">
+                    <span className="hidden sm:inline text-outline-variant">•</span>
+                    <span className="px-2.5 py-0.5 rounded-lg bg-surface-container-lowest font-medium text-xs sm:text-sm text-on-surface-variant border border-outline-variant/20">
                       ICSE Board
                     </span>
-                    <span className="text-outline-variant">•</span>
-                    <span className="font-label-md text-label-md text-on-surface-variant font-medium">
+                    <span className="hidden sm:inline text-outline-variant">•</span>
+                    <span className="px-2.5 py-0.5 rounded-lg bg-surface-container-lowest font-medium text-xs sm:text-sm text-on-surface-variant border border-outline-variant/20">
                       UP State Board
                     </span>
                   </div>
                 </div>
 
                 {/* Hero Graphic / Image */}
-                <div className="lg:col-span-5 relative">
-                  <div className="relative rounded-3xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
+                <div className="lg:col-span-5 relative w-full">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
                     <img
-                      className="w-full h-[460px] object-cover object-center"
+                      className="w-full h-[260px] sm:h-[360px] lg:h-[460px] object-cover object-center"
                       alt="An Indian female home tutor patiently explaining mathematics to a student"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0QebPomy7eQ7PMBJJGXiPz7tx3abSAV7T-CzywVNuAbW8JE-zmTHM4-Ubw9xkZ56im27NyDvX3SGHhjyZqwPjd5E0Jf-utrMpH90hK7F4PF3Cb8rBasJ9o7mK1BZIHtofi0TVpaWqmsr-Shmgq8rMy4vhEW6sr0mgT_C2kQ_LvfrahrQdaoYwBHPi6a9w5YIJxdWtw7rDysPfylQscE8Fi-UV_5Showh-osEVYnDKe2xvUdBXBdhp"
                     />
-                    <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-surface/90 backdrop-blur-md shadow-sm flex items-center justify-between gap-3 border border-white/40">
-                      <div>
-                        <p className="font-headline-sm text-headline-sm text-primary text-sm font-semibold">
+                    <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface/90 backdrop-blur-md shadow-sm flex items-center justify-between gap-3 border border-white/40">
+                      <div className="min-w-0">
+                        <p className="font-headline-sm text-xs sm:text-sm text-primary font-semibold truncate">
                           Personalized Mentorship
                         </p>
-                        <p className="font-body-sm text-body-sm text-on-surface-variant">
+                        <p className="font-body-sm text-[11px] sm:text-xs text-on-surface-variant truncate">
                           1-on-1 tutoring at your home in Lucknow
                         </p>
                       </div>
-                      <div className="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-[20px]">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-[18px] sm:text-[20px]">
                           check_circle
                         </span>
                       </div>
@@ -291,42 +286,42 @@ export default function Home() {
               </div>
 
               {/* Under Hero: Our Services (2 Large Cards) */}
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h2 className="font-headline-lg text-headline-lg text-primary font-bold">
+              <div className="flex flex-col gap-5 sm:gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+                  <h2 className="font-headline-lg text-2xl sm:text-3xl text-primary font-bold">
                     Our Core Learning Verticals
                   </h2>
-                  <span className="font-label-md text-label-md text-on-surface-variant font-medium">
+                  <span className="font-label-md text-xs sm:text-sm text-on-surface-variant font-medium">
                     Tailored educational models for every scholar
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
                   {/* Card 1: Home Tuition */}
-                  <div className="bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between gap-6 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/20">
-                    <div className="flex flex-col gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center">
-                        <span className="material-symbols-outlined text-[24px]">
+                  <div className="bg-surface-container-low p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/20">
+                    <div className="flex flex-col gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-primary-container text-on-primary flex items-center justify-center">
+                        <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                           home_pin
                         </span>
                       </div>
-                      <h3 className="font-headline-md text-headline-md text-primary font-bold">
+                      <h3 className="font-headline-md text-xl sm:text-2xl text-primary font-bold">
                         Home Tuition in Lucknow
                       </h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                      <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
                         Qualified, background-verified personal mentors traveling
                         directly to your residence across all primary sectors in
                         Lucknow. Individual pace, customized study schedules, and zero
                         commute stress.
                       </p>
-                      <ul className="flex flex-col gap-2 pt-2">
-                        <li className="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-                          <span className="material-symbols-outlined text-secondary text-[18px]">
+                      <ul className="flex flex-col gap-2 pt-1">
+                        <li className="flex items-center gap-2 font-body-sm text-xs sm:text-sm text-on-surface">
+                          <span className="material-symbols-outlined text-secondary text-[16px] sm:text-[18px] shrink-0">
                             check
                           </span>
                           Tailored 1-on-1 focus with custom speed
                         </li>
-                        <li className="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-                          <span className="material-symbols-outlined text-secondary text-[18px]">
+                        <li className="flex items-center gap-2 font-body-sm text-xs sm:text-sm text-on-surface">
+                          <span className="material-symbols-outlined text-secondary text-[16px] sm:text-[18px] shrink-0">
                             check
                           </span>
                           Choice of subject specialists & verified teachers
@@ -334,7 +329,7 @@ export default function Home() {
                       </ul>
                     </div>
                     <a
-                      className="self-start inline-flex items-center gap-2 font-label-md text-label-md text-primary font-bold hover:text-secondary transition-colors"
+                      className="self-start inline-flex items-center gap-1.5 font-label-md text-sm sm:text-base text-primary font-bold hover:text-secondary transition-colors pt-2"
                       href="#request-tutor"
                     >
                       Request Home Tutor{" "}
@@ -345,30 +340,30 @@ export default function Home() {
                   </div>
 
                   {/* Card 2: Coaching Classes */}
-                  <div className="bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between gap-6 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/20">
-                    <div className="flex flex-col gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-secondary text-on-secondary flex items-center justify-center">
-                        <span className="material-symbols-outlined text-[24px]">
+                  <div className="bg-surface-container-low p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/20">
+                    <div className="flex flex-col gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-secondary text-on-secondary flex items-center justify-center">
+                        <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                           school
                         </span>
                       </div>
-                      <h3 className="font-headline-md text-headline-md text-primary font-bold">
+                      <h3 className="font-headline-md text-xl sm:text-2xl text-primary font-bold">
                         Vkova Coaching Classes
                       </h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                      <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
                         Modern academic batch centers equipped with smart whiteboards,
                         structured assessment modules, and small peer cohorts
                         situated at Baroli Khalilabad, Sector 12, Lucknow.
                       </p>
-                      <ul className="flex flex-col gap-2 pt-2">
-                        <li className="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-                          <span className="material-symbols-outlined text-secondary text-[18px]">
+                      <ul className="flex flex-col gap-2 pt-1">
+                        <li className="flex items-center gap-2 font-body-sm text-xs sm:text-sm text-on-surface">
+                          <span className="material-symbols-outlined text-secondary text-[16px] sm:text-[18px] shrink-0">
                             check
                           </span>
                           Rigorous mock test series & weekly evaluations
                         </li>
-                        <li className="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-                          <span className="material-symbols-outlined text-secondary text-[18px]">
+                        <li className="flex items-center gap-2 font-body-sm text-xs sm:text-sm text-on-surface">
+                          <span className="material-symbols-outlined text-secondary text-[16px] sm:text-[18px] shrink-0">
                             check
                           </span>
                           Affordable fee structure with master subject faculty
@@ -376,7 +371,7 @@ export default function Home() {
                       </ul>
                     </div>
                     <a
-                      className="self-start inline-flex items-center gap-2 font-label-md text-label-md text-primary font-bold hover:text-secondary transition-colors"
+                      className="self-start inline-flex items-center gap-1.5 font-label-md text-sm sm:text-base text-primary font-bold hover:text-secondary transition-colors pt-2"
                       href="#coaching"
                     >
                       Explore Coaching Batches{" "}
@@ -389,51 +384,51 @@ export default function Home() {
               </div>
 
               {/* Who Can Use VKOVA (3 Cards) */}
-              <div className="flex flex-col gap-6">
-                <h3 className="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">
+              <div className="flex flex-col gap-5 sm:gap-6">
+                <h3 className="font-headline-sm text-xl sm:text-2xl text-primary tracking-tight font-bold">
                   Built For the Entire Lucknow Learning Ecosystem
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                    <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                      <span className="material-symbols-outlined text-[22px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                         family_restroom
                       </span>
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       For Parents
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Gain peace of mind with transparent tutor credentials,
                       periodic performance reports, and secure home learning
                       without travel hassles.
                     </p>
                   </div>
-                  <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                    <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                      <span className="material-symbols-outlined text-[22px]">
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                         auto_stories
                       </span>
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       For Students
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Master challenging concepts with empathetic guidance,
                       targeted question practice, and customized pace tailored to
                       your syllabus.
                     </p>
                   </div>
-                  <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                    <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                      <span className="material-symbols-outlined text-[22px]">
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 sm:col-span-2 md:col-span-1">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                         co_present
                       </span>
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       For Tutors
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Connect with serious students in your preferred Lucknow
                       neighborhoods, establish steady earnings, and receive
                       administrative backing.
@@ -447,106 +442,106 @@ export default function Home() {
           {/* =========================================
               SECTION 2: HOME TUITION
           ========================================== */}
-          <section className="w-full bg-[#F6F8FA] py-24" id="home-tuition">
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-16">
-              <div className="flex flex-col gap-3 max-w-2xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+          <section className="w-full bg-[#F6F8FA] py-12 sm:py-16 lg:py-24" id="home-tuition">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-16">
+              <div className="flex flex-col gap-2 sm:gap-3 max-w-2xl">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Home Tuition
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold leading-tight">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold leading-tight">
                   Home Tutors Across Lucknow
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                <p className="font-body-md sm:font-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed">
                   We help parents and students find the right home tutor, close to
                   home, matched precisely to class, board, and learning temperament.
                 </p>
               </div>
 
               {/* 6 Clean Feature Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       looks_one
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Classes 1st to 12th
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Foundational literacy & numeracy for primary grades through to
                     advanced board exam prep for secondary & senior secondary
                     students.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       menu_book
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     CBSE Curriculum
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     NCERT-aligned lesson architecture focusing on conceptual
                     clarity, continuous revision exercises, and exemplary sample
                     paper drills.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       history_edu
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     ICSE / ISC Board
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Rigorous coverage of extensive ICSE syllabi, in-depth English
                     language writing, applications, and science laboratory theory.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       account_balance
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     UP State Board
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Hindi and English medium tuition aligned precisely with the
                     Uttar Pradesh Madhyamik Shiksha Parishad examination framework.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       calculate
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Customized Subjects
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Need guidance solely in Physics, Pure Math, Chemistry, or
                     Accounts? Hire specialists focusing exclusively on problem
                     subjects.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-[20px]">
                       near_me
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Hyper-Local Matching
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Instant matching across Gomti Nagar, Alambagh, Indira Nagar,
                     Hazratganj, Baroli Khalilabad, and all prominent Lucknow
                     localities.
@@ -555,48 +550,48 @@ export default function Home() {
               </div>
 
               {/* How It Works in 3 Numbered Steps */}
-              <div className="p-8 lg:p-12 rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col gap-8 border border-outline-variant/20">
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold">
+              <div className="p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col gap-6 sm:gap-8 border border-outline-variant/20">
+                <div className="flex flex-col gap-1.5 sm:gap-2">
+                  <h3 className="font-headline-md text-xl sm:text-2xl text-primary font-bold">
                     How It Works
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant">
+                  <p className="font-body-md text-xs sm:text-sm text-on-surface-variant">
                     Three simple steps to secure your dedicated home tutor
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                  <div className="flex flex-col gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative">
+                  <div className="flex flex-col gap-2.5 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-secondary-container text-on-secondary-container font-headline-sm text-base sm:text-headline-sm font-bold flex items-center justify-center">
                       01
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       Post Requirement
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Tell us your student&apos;s class, board, subjects, residential
                       area, and schedule preferences through our fast request form.
                     </p>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                  <div className="flex flex-col gap-2.5 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-primary-container text-on-primary font-headline-sm text-base sm:text-headline-sm font-bold flex items-center justify-center">
                       02
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       Tutor Profile Match
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       VKOVA reviews local tutors and coordinates a free or subsidized
                       demo session with the most qualified teacher.
                     </p>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                  <div className="flex flex-col gap-2.5 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-tertiary-container text-on-tertiary font-headline-sm text-base sm:text-headline-sm font-bold flex items-center justify-center">
                       03
                     </div>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-on-surface font-semibold">
                       Commence Home Classes
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Confirm your satisfaction, lock in the weekly schedule, and
                       embark on structured, regular learning right at home.
                     </p>
@@ -610,38 +605,38 @@ export default function Home() {
               SECTION 3: REQUEST A TUTOR
           ========================================== */}
           <section
-            className="w-full bg-surface-container-lowest py-24"
+            className="w-full bg-surface-container-lowest py-12 sm:py-16 lg:py-24"
             id="request-tutor"
           >
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-8 sm:gap-12">
               <div className="flex flex-col gap-2 max-w-xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Fast Matching
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold">
                   Request a Tutor
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                <p className="font-body-md sm:font-body-lg text-xs sm:text-sm md:text-base text-on-surface-variant">
                   Fill in your academic requirement. Our coordinator will contact you
                   shortly with matched profiles.
                 </p>
               </div>
 
               {/* High-fidelity Form Card */}
-              <div className="w-full max-w-4xl bg-surface-container-low p-8 lg:p-10 rounded-3xl shadow-sm border border-outline-variant/20">
+              <div className="w-full max-w-4xl bg-surface-container-low p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-sm border border-outline-variant/20">
                 {/* Interactive Simulated Success Banner */}
                 {requestSubmitted && (
-                  <div className="mb-8 p-6 rounded-2xl bg-tertiary-container/10 border-l-4 border-tertiary-container flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
-                      <span className="material-symbols-outlined">
+                  <div className="mb-6 sm:mb-8 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-tertiary-container/10 border-l-4 border-tertiary-container flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+                      <span className="material-symbols-outlined text-[20px]">
                         check_circle
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-headline-sm text-headline-sm text-tertiary-container font-bold">
+                      <h4 className="font-headline-sm text-sm sm:text-base text-tertiary-container font-bold">
                         Requirement Submitted Successfully!
                       </h4>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant">
                         Our Lucknow academic counsellor will call you within 2
                         hours to confirm your tutor profile.
                       </p>
@@ -650,39 +645,39 @@ export default function Home() {
                 )}
 
                 <form
-                  className="flex flex-col gap-6"
+                  className="flex flex-col gap-4 sm:gap-6"
                   onSubmit={handleRequestSubmit}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Parent / Student Name
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="e.g. Ramesh Srivastava"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Mobile Number
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="+91 98765 XXXXX"
                         required
                         type="tel"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Student Class / Standard
                       </label>
                       <select
                         defaultValue="Class 9-10"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                       >
                         <option value="Class 1-5">Class 1st - 5th (Primary)</option>
                         <option value="Class 6-8">Class 6th - 8th (Middle)</option>
@@ -694,13 +689,13 @@ export default function Home() {
                         </option>
                       </select>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Educational Board
                       </label>
                       <select
                         defaultValue="CBSE"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                       >
                         <option value="CBSE">CBSE</option>
                         <option value="ICSE">ICSE / ISC</option>
@@ -708,23 +703,23 @@ export default function Home() {
                         <option value="Other">Other Curriculum</option>
                       </select>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Subjects Required
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="e.g. Mathematics & Science"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Location / Area in Lucknow
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="e.g. Sector 12, Baroli Khalilabad"
                         required
                         type="text"
@@ -734,17 +729,17 @@ export default function Home() {
 
                   {/* Tutor Gender Preference Toggle */}
                   <div className="flex flex-col gap-2">
-                    <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                       Preferred Tutor Preference
                     </label>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
                       {["Male Tutor", "Female Tutor", "No Preference"].map(
                         (pref) => (
                           <button
                             key={pref}
                             type="button"
                             onClick={() => setTutorGenderPref(pref)}
-                            className={`px-5 py-2.5 rounded-xl font-label-md text-label-md transition-colors ${
+                            className={`w-full py-2.5 px-4 rounded-xl font-label-md text-xs sm:text-sm transition-all text-center ${
                               tutorGenderPref === pref
                                 ? "bg-primary text-on-primary font-bold shadow-sm"
                                 : "bg-surface-container-lowest text-on-surface hover:bg-surface-container-high border border-outline-variant/30"
@@ -757,42 +752,42 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Preferred Timing
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="e.g. Evening 4:00 PM - 6:00 PM"
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Monthly Budget (Approx)
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="e.g. ₹3,500 - ₹5,000 / month"
                         type="text"
                       />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <label className="font-label-md text-label-md text-on-surface font-semibold">
+                  <div className="flex flex-col gap-1.5 sm:gap-2">
+                    <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                       Additional Note (Optional)
                     </label>
                     <textarea
-                      className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                      className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                       placeholder="Specific exam targets, school name, or student's weak chapters..."
                       rows={3}
                     ></textarea>
                   </div>
 
                   <button
-                    className="self-start inline-flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-lg text-label-lg px-8 py-4 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md"
+                    className="w-full sm:w-auto self-start inline-flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-md sm:font-label-lg text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md text-center"
                     type="submit"
                   >
                     Submit Requirement
@@ -805,61 +800,61 @@ export default function Home() {
           {/* =========================================
               SECTION 4: JOIN AS A TUTOR
           ========================================== */}
-          <section className="w-full bg-[#F6F8FA] py-24" id="join-tutor">
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-16">
-              <div className="flex flex-col gap-3 max-w-xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+          <section className="w-full bg-[#F6F8FA] py-12 sm:py-16 lg:py-24" id="join-tutor">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-16">
+              <div className="flex flex-col gap-2 sm:gap-3 max-w-xl">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Educator Community
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold">
                   Join VKOVA as a Tutor
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                <p className="font-body-md sm:font-body-lg text-xs sm:text-sm md:text-base text-on-surface-variant">
                   Empowering passionate teachers and subject scholars with rewarding
                   tutoring assignments across Lucknow.
                 </p>
               </div>
 
               {/* 3 Tutor Benefit Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[22px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                       assignment_turned_in
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Verified Student Leads
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Zero cold calls. Receive pre-qualified student requirements that
                     match your exact subject mastery and target localities.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[22px]">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                       schedule
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Flexible Timings
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Teach on your own schedule. Choose morning, afternoon, or
                     evening batches based on your availability.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                  <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[22px]">
+                <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20 sm:col-span-2 md:col-span-1">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[22px]">
                       support_agent
                     </span>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                     Full Team Support
                   </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Dedicated administrative support for smooth scheduling,
                     transparent fee policies, and dispute mediation.
                   </p>
@@ -867,24 +862,24 @@ export default function Home() {
               </div>
 
               {/* Tutor Application Form Card */}
-              <div className="w-full max-w-4xl bg-surface-container-lowest p-8 lg:p-10 rounded-3xl shadow-sm border border-outline-variant/20">
-                <h3 className="font-headline-md text-headline-md text-primary font-bold mb-6">
+              <div className="w-full max-w-4xl bg-surface-container-lowest p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-sm border border-outline-variant/20">
+                <h3 className="font-headline-md text-xl sm:text-2xl text-primary font-bold mb-4 sm:mb-6">
                   Tutor Application Form
                 </h3>
 
                 {/* Interactive Simulated Confirmation Badge */}
                 {tutorAppSubmitted && (
-                  <div className="mb-8 p-6 rounded-2xl bg-tertiary-container/10 border-l-4 border-tertiary-container flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
-                      <span className="material-symbols-outlined">
+                  <div className="mb-6 sm:mb-8 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-tertiary-container/10 border-l-4 border-tertiary-container flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+                      <span className="material-symbols-outlined text-[20px]">
                         workspace_premium
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-headline-sm text-headline-sm text-tertiary-container font-bold">
+                      <h4 className="font-headline-sm text-sm sm:text-base text-tertiary-container font-bold">
                         Application Received!
                       </h4>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant">
                         Our tutor onboarding team will review your qualifications
                         and contact you for document verification.
                       </p>
@@ -892,59 +887,59 @@ export default function Home() {
                   </div>
                 )}
 
-                <form className="flex flex-col gap-6" onSubmit={handleTutorSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                <form className="flex flex-col gap-4 sm:gap-6" onSubmit={handleTutorSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Full Name
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. Dr. Priya Verma"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Mobile Number
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="+91 94520 XXXXX"
                         required
                         type="tel"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Email Address
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="priya.verma@example.com"
                         required
                         type="email"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Highest Educational Qualification
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. M.Sc Physics / B.Tech"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Teaching Experience (Years)
                       </label>
                       <select
                         defaultValue="3-5 years"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                       >
                         <option value="Fresher">Fresher / Under 1 year</option>
                         <option value="1-3 years">1 - 3 Years</option>
@@ -952,55 +947,55 @@ export default function Home() {
                         <option value="5+ years">More than 5 Years</option>
                       </select>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Subjects You Teach
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. Physics, Chemistry, Mathematics"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Target Classes
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. 9th to 12th Standard"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Preferred Lucknow Areas
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. Sector 12, Baroli Khalilabad, Alambagh"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Availability Hours
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. 3 PM - 8 PM Weekdays"
                         type="text"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Expected Fees / Hour or Month
                       </label>
                       <input
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-low text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. ₹500/hr or ₹4,000/month"
                         type="text"
                       />
@@ -1008,11 +1003,11 @@ export default function Home() {
                   </div>
 
                   {/* Document Upload Box */}
-                  <div className="flex flex-col gap-2">
-                    <label className="font-label-md text-label-md text-on-surface font-semibold">
+                  <div className="flex flex-col gap-1.5 sm:gap-2">
+                    <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                       Upload Resume / ID Proof (Optional for initial match)
                     </label>
-                    <label className="border-2 border-dashed border-outline-variant/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low cursor-pointer transition-colors group">
+                    <label className="border-2 border-dashed border-outline-variant/60 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low cursor-pointer transition-colors group">
                       <input
                         type="file"
                         className="hidden"
@@ -1023,10 +1018,10 @@ export default function Home() {
                           }
                         }}
                       />
-                      <span className="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-primary text-[28px] sm:text-[32px] group-hover:scale-110 transition-transform">
                         upload_file
                       </span>
-                      <p className="font-body-sm text-body-sm text-on-surface font-medium">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface font-medium text-center">
                         {uploadedResumeName ? (
                           <span className="text-secondary font-bold">
                             Selected: {uploadedResumeName}
@@ -1035,7 +1030,7 @@ export default function Home() {
                           "Click to upload PDF, DOCX, or Image (Max 5MB)"
                         )}
                       </p>
-                      <p className="font-label-sm text-label-sm text-on-surface-variant">
+                      <p className="font-label-sm text-[11px] sm:text-xs text-on-surface-variant text-center">
                         Aadhaar card or degree certificate verification will
                         follow
                       </p>
@@ -1043,7 +1038,7 @@ export default function Home() {
                   </div>
 
                   <button
-                    className="self-start inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md"
+                    className="w-full sm:w-auto self-start inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-md sm:font-label-lg text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md text-center"
                     type="submit"
                   >
                     Submit Application
@@ -1057,61 +1052,61 @@ export default function Home() {
               SECTION 5: COACHING CLASSES
           ========================================== */}
           <section
-            className="w-full bg-surface-container-lowest py-24"
+            className="w-full bg-surface-container-lowest py-12 sm:py-16 lg:py-24"
             id="coaching"
           >
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-16">
-              <div className="flex flex-col gap-3 max-w-2xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-16">
+              <div className="flex flex-col gap-2 sm:gap-3 max-w-2xl">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Campus Learning
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold">
                   Vkova Coaching Classes
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                <p className="font-body-md sm:font-body-lg text-xs sm:text-sm md:text-base text-on-surface-variant">
                   Immersive offline classroom learning with structured batches,
                   disciplined testing schedules, and mentor access.
                 </p>
               </div>
 
               {/* Classroom Visual & Overview Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center">
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-lg bg-surface-container border border-outline-variant/30">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg bg-surface-container border border-outline-variant/30">
                     <img
-                      className="w-full h-[400px] object-cover object-center"
+                      className="w-full h-[240px] sm:h-[320px] lg:h-[400px] object-cover object-center"
                       alt="An Indian male teacher actively teaching Physics on a whiteboard in Lucknow classroom"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLZGAs7mVtBUaI_pXnjy_lAd_vTRMdKwcvf5DGTqv2PJRjEm2g6jQlLx1tlw6ZbZ_Qq4xKZOa8Hyn1BQGkJGWxZFycWRL82JNiKmCz_51x82V-cbOTo7xUle2wiVbCU02A4ND81aoPe2QVsym-oidcFSNw7cLFq0VKXTMdXultb5z5JvtwnaqlV1srP2A7qRrKI6gTWqbV2nejy7iLft0b2tjwVSQm0WdpmQYsNGjFVMN0VgLg1f4t"
                     />
-                    <div className="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-md">
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-xs sm:text-sm font-semibold shadow-md">
                       Admissions Open 2026-27
                     </div>
                   </div>
                 </div>
 
-                <div className="lg:col-span-5 flex flex-col gap-6">
-                  <div className="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                    <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                       Classes We Offer
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3.5 py-1.5 rounded-xl bg-surface-container-lowest font-label-sm text-label-sm text-on-surface border border-outline-variant/30 font-medium">
+                      <span className="px-3 py-1 rounded-xl bg-surface-container-lowest font-label-sm text-xs sm:text-sm text-on-surface border border-outline-variant/30 font-medium">
                         Class 6th to 8th (Foundation)
                       </span>
-                      <span className="px-3.5 py-1.5 rounded-xl bg-surface-container-lowest font-label-sm text-label-sm text-on-surface border border-outline-variant/30 font-medium">
+                      <span className="px-3 py-1 rounded-xl bg-surface-container-lowest font-label-sm text-xs sm:text-sm text-on-surface border border-outline-variant/30 font-medium">
                         Class 9th & 10th (Board Prep)
                       </span>
-                      <span className="px-3.5 py-1.5 rounded-xl bg-surface-container-lowest font-label-sm text-label-sm text-on-surface border border-outline-variant/30 font-medium">
+                      <span className="px-3 py-1 rounded-xl bg-surface-container-lowest font-label-sm text-xs sm:text-sm text-on-surface border border-outline-variant/30 font-medium">
                         Class 11th & 12th (Science/Commerce)
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-3 border border-outline-variant/20">
-                    <h4 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-2.5 sm:gap-3 border border-outline-variant/20">
+                    <h4 className="font-headline-sm text-base sm:text-lg text-primary font-bold">
                       Subjects We Offer
                     </h4>
-                    <div className="grid grid-cols-2 gap-2 text-on-surface font-body-sm text-body-sm">
+                    <div className="grid grid-cols-2 gap-2 text-on-surface font-body-sm text-xs sm:text-sm">
                       <span className="flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                         Mathematics
@@ -1142,25 +1137,25 @@ export default function Home() {
               </div>
 
               {/* Visit Us Card & Quick Admission Enquiry */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
                 {/* Visit Us Center Details */}
-                <div className="lg:col-span-6 bg-surface-container-low p-8 rounded-3xl shadow-sm flex flex-col justify-between gap-6 border border-outline-variant/20">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+                <div className="lg:col-span-6 bg-surface-container-low p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm flex flex-col justify-between gap-5 sm:gap-6 border border-outline-variant/20">
+                  <div className="flex flex-col gap-3 sm:gap-4">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
                         <span className="material-symbols-outlined text-[20px]">
                           location_on
                         </span>
                       </div>
-                      <h3 className="font-headline-sm text-headline-sm text-primary font-bold">
+                      <h3 className="font-headline-sm text-lg sm:text-xl text-primary font-bold">
                         Visit Our Lucknow Center
                       </h3>
                     </div>
-                    <p className="font-body-md text-body-md text-on-surface">
+                    <p className="font-body-md text-xs sm:text-sm md:text-base text-on-surface">
                       <strong>Address:</strong> Baroli Khalilabad, Sector 12,
                       Lucknow, Uttar Pradesh 226028
                     </p>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                       Visiting hours: Monday to Saturday, 9:00 AM – 7:30 PM.
                       Walk-ins welcome for parent-counsellor meetups.
                     </p>
@@ -1170,13 +1165,13 @@ export default function Home() {
                       href="https://maps.google.com/?q=Baroli+Khalilabad,+Sector+12,+Lucknow,+Uttar+Pradesh+226028"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full h-48 rounded-2xl bg-surface-container overflow-hidden relative shadow-inner block group border border-outline-variant/40"
+                      className="w-full h-36 sm:h-48 rounded-xl sm:rounded-2xl bg-surface-container overflow-hidden relative shadow-inner block group border border-outline-variant/40"
                     >
-                      <div className="absolute inset-0 flex items-center justify-center flex-col gap-2 bg-primary/5 group-hover:bg-primary/10 transition-colors">
-                        <span className="material-symbols-outlined text-primary text-[36px] group-hover:scale-110 transition-transform">
+                      <div className="absolute inset-0 flex items-center justify-center flex-col gap-1.5 sm:gap-2 bg-primary/5 group-hover:bg-primary/10 transition-colors p-2 text-center">
+                        <span className="material-symbols-outlined text-primary text-[32px] sm:text-[36px] group-hover:scale-110 transition-transform">
                           map
                         </span>
-                        <span className="font-label-sm text-label-sm text-on-surface font-semibold">
+                        <span className="font-label-sm text-xs sm:text-sm text-on-surface font-semibold">
                           Baroli Khalilabad, Sector 12, Lucknow
                         </span>
                         <span className="text-xs text-primary font-medium underline">
@@ -1186,9 +1181,9 @@ export default function Home() {
                     </a>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2">
                     <a
-                      className="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-3 rounded-xl transition-all font-semibold hover:bg-primary-container"
+                      className="inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-sm sm:text-base px-5 py-3 rounded-xl transition-all font-semibold hover:bg-primary-container text-center"
                       href="tel:+919452000000"
                     >
                       <span className="material-symbols-outlined text-[18px]">
@@ -1197,7 +1192,7 @@ export default function Home() {
                       Call Center
                     </a>
                     <a
-                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md text-label-md px-5 py-3 rounded-xl transition-all font-semibold"
+                      className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md text-sm sm:text-base px-5 py-3 rounded-xl transition-all font-semibold text-center"
                       href="https://wa.me/919452000000"
                       rel="noopener noreferrer"
                       target="_blank"
@@ -1211,57 +1206,57 @@ export default function Home() {
                 </div>
 
                 {/* Quick Admission Form */}
-                <div className="lg:col-span-6 bg-surface-container-low p-8 rounded-3xl shadow-sm flex flex-col gap-6 border border-outline-variant/20">
+                <div className="lg:col-span-6 bg-surface-container-low p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm flex flex-col gap-4 sm:gap-6 border border-outline-variant/20">
                   <div className="flex flex-col gap-1">
-                    <h3 className="font-headline-sm text-headline-sm text-primary font-bold">
+                    <h3 className="font-headline-sm text-lg sm:text-xl text-primary font-bold">
                       Quick Admission Enquiry
                     </h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">
+                    <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant">
                       Reserve a demo classroom seat or request the fee structure.
                     </p>
                   </div>
 
                   {admissionSubmitted && (
-                    <div className="p-4 rounded-xl bg-tertiary-container/10 border-l-4 border-tertiary-container text-tertiary-container text-sm font-semibold">
+                    <div className="p-3.5 rounded-xl bg-tertiary-container/10 border-l-4 border-tertiary-container text-tertiary-container text-xs sm:text-sm font-semibold">
                       Enquiry received! We look forward to welcoming you at our
                       center.
                     </div>
                   )}
 
                   <form
-                    className="flex flex-col gap-4"
+                    className="flex flex-col gap-3.5 sm:gap-4"
                     onSubmit={handleAdmissionSubmit}
                   >
-                    <div className="flex flex-col gap-1.5">
-                      <label className="font-label-sm text-label-sm text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label className="font-label-sm text-xs sm:text-sm text-on-surface font-semibold">
                         Student Name
                       </label>
                       <input
-                        className="w-full px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="Enter student's name"
                         required
                         type="text"
                       />
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-label-sm text-label-sm text-on-surface font-semibold">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                      <div className="flex flex-col gap-1 sm:gap-1.5">
+                        <label className="font-label-sm text-xs sm:text-sm text-on-surface font-semibold">
                           Contact Phone
                         </label>
                         <input
-                          className="w-full px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                           placeholder="+91 94520 XXXXX"
                           required
                           type="tel"
                         />
                       </div>
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-label-sm text-label-sm text-on-surface font-semibold">
+                      <div className="flex flex-col gap-1 sm:gap-1.5">
+                        <label className="font-label-sm text-xs sm:text-sm text-on-surface font-semibold">
                           Class / Target Grade
                         </label>
                         <select
                           defaultValue="Class 10"
-                          className="w-full px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         >
                           <option value="Class 9">Class 9th</option>
                           <option value="Class 10">Class 10th</option>
@@ -1270,18 +1265,18 @@ export default function Home() {
                         </select>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="font-label-sm text-label-sm text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label className="font-label-sm text-xs sm:text-sm text-on-surface font-semibold">
                         Stream / Subject Focus
                       </label>
                       <input
-                        className="w-full px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30"
                         placeholder="e.g. Science (PCM / PCB) or Commerce"
                         type="text"
                       />
                     </div>
                     <button
-                      className="mt-2 inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md"
+                      className="mt-1 w-full sm:w-auto self-start inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-md text-sm sm:text-base px-6 py-3 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md text-center"
                       type="submit"
                     >
                       Enquire for Admission
@@ -1295,16 +1290,16 @@ export default function Home() {
           {/* =========================================
               SECTION 6: ABOUT & FOUNDER
           ========================================== */}
-          <section className="w-full bg-[#F6F8FA] py-24" id="about">
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-16">
-              <div className="flex flex-col gap-3 max-w-2xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+          <section className="w-full bg-[#F6F8FA] py-12 sm:py-16 lg:py-24" id="about">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-16">
+              <div className="flex flex-col gap-2 sm:gap-3 max-w-2xl">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Institution Heritage
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold">
                   About VKOVA
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                <p className="font-body-md sm:font-body-lg text-xs sm:text-sm md:text-base text-on-surface-variant leading-relaxed">
                   Built with an uncompromising vision: making high-caliber
                   education personalized, accountable, and locally accessible
                   across Lucknow.
@@ -1312,45 +1307,45 @@ export default function Home() {
               </div>
 
               {/* 3 Core Values */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4 border border-outline-variant/20">
-                  <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[24px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 sm:gap-4 border border-outline-variant/20">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                       shield
                     </span>
                   </div>
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold">
+                  <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold">
                     Unquestioned Trust
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Every home tutor is thoroughly vetted for academic credentials
                     and background security before they enter your home.
                   </p>
                 </div>
-                <div className="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4 border border-outline-variant/20">
-                  <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[24px]">
+                <div className="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 sm:gap-4 border border-outline-variant/20">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                       grade
                     </span>
                   </div>
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold">
+                  <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold">
                     Rigorous Quality
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     We track syllabus completion milestones and student score
                     improvements through regular feedback touchpoints.
                   </p>
                 </div>
-                <div className="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4 border border-outline-variant/20">
-                  <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[24px]">
+                <div className="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 sm:gap-4 border border-outline-variant/20">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                       psychology
                     </span>
                   </div>
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold">
+                  <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold">
                     Personal Attention
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     No student gets left behind in massive crowded halls. We
                     cultivate patience, curiosity, and question-asking habits.
                   </p>
@@ -1358,23 +1353,23 @@ export default function Home() {
               </div>
 
               {/* About Founder Profile Card */}
-              <div className="w-full bg-surface-container-lowest p-8 lg:p-12 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-8 lg:gap-12 border border-outline-variant/20">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-surface-container flex items-center justify-center shrink-0 overflow-hidden shadow-sm border-2 border-primary/20">
-                  <span className="material-symbols-outlined text-primary text-[64px]">
+              <div className="w-full bg-surface-container-lowest p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-5 sm:gap-8 lg:gap-12 border border-outline-variant/20 text-center md:text-left">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-surface-container flex items-center justify-center shrink-0 overflow-hidden shadow-sm border-2 border-primary/20">
+                  <span className="material-symbols-outlined text-primary text-[48px] sm:text-[64px]">
                     person
                   </span>
                 </div>
-                <div className="flex flex-col gap-3 text-center md:text-left">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+                <div className="flex flex-col gap-2 sm:gap-3">
+                  <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                     Leadership Message
                   </span>
-                  <h3 className="font-headline-lg text-headline-lg text-primary font-bold">
+                  <h3 className="font-headline-lg text-xl sm:text-2xl lg:text-3xl text-primary font-bold">
                     [Founder Name]
                   </h3>
-                  <p className="font-label-md text-label-md text-primary font-semibold">
+                  <p className="font-label-md text-xs sm:text-sm text-primary font-semibold">
                     Founder & Academic Director, VKOVA Educational Institute
                   </p>
-                  <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed italic">
+                  <p className="font-body-md text-xs sm:text-sm md:text-base text-on-surface-variant max-w-2xl leading-relaxed italic">
                     &ldquo;Education is fundamentally a bond of trust between mentor
                     and student. We founded VKOVA in Lucknow so that no parent
                     feels helpless navigating their child&apos;s academic
@@ -1390,105 +1385,105 @@ export default function Home() {
               SECTION 7: CONTACT
           ========================================== */}
           <section
-            className="w-full bg-surface-container-lowest py-24"
+            className="w-full bg-surface-container-lowest py-12 sm:py-16 lg:py-24"
             id="contact"
           >
-            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-16">
-              <div className="flex flex-col gap-3 max-w-2xl">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-14 lg:gap-16">
+              <div className="flex flex-col gap-2 sm:gap-3 max-w-2xl">
+                <span className="font-label-sm text-xs sm:text-sm text-secondary font-bold uppercase tracking-wider">
                   Reach Out
                 </span>
-                <h2 className="font-headline-xl text-headline-xl text-primary font-bold">
+                <h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary font-bold">
                   Contact VKOVA
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                <p className="font-body-md sm:font-body-lg text-xs sm:text-sm md:text-base text-on-surface-variant">
                   Have queries regarding home tutoring or classroom admissions? Get
                   in touch with our team today.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12">
                 {/* Contact Information Block */}
-                <div className="lg:col-span-5 flex flex-col gap-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
-                      <span className="material-symbols-outlined text-[24px]">
+                <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-8">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                         call
                       </span>
                     </div>
-                    <div>
-                      <p className="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">
+                    <div className="min-w-0">
+                      <p className="font-label-sm text-xs sm:text-sm text-on-surface-variant uppercase font-semibold">
                         Phone Support
                       </p>
                       <a
-                        className="font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors"
+                        className="font-headline-sm text-base sm:text-headline-sm text-primary font-bold hover:text-secondary transition-colors block break-words"
                         href="tel:+919452000000"
                       >
                         +91 94520 XXXXX
                       </a>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-0.5">
                         Mon–Sat, 8:00 AM – 8:00 PM
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-[#25D366] shrink-0 border border-outline-variant/30">
-                      <span className="material-symbols-outlined text-[24px]">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-[#25D366] shrink-0 border border-outline-variant/30">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                         chat
                       </span>
                     </div>
-                    <div>
-                      <p className="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">
+                    <div className="min-w-0">
+                      <p className="font-label-sm text-xs sm:text-sm text-on-surface-variant uppercase font-semibold">
                         WhatsApp Desk
                       </p>
                       <a
-                        className="font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors"
+                        className="font-headline-sm text-base sm:text-headline-sm text-primary font-bold hover:text-secondary transition-colors block"
                         href="https://wa.me/919452000000"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         Chat Instantly
                       </a>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-0.5">
                         Quick responses for requirements & demos
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
-                      <span className="material-symbols-outlined text-[24px]">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                         mail
                       </span>
                     </div>
-                    <div>
-                      <p className="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">
+                    <div className="min-w-0">
+                      <p className="font-label-sm text-xs sm:text-sm text-on-surface-variant uppercase font-semibold">
                         Official Email
                       </p>
-                      <p className="font-headline-sm text-headline-sm text-primary font-bold">
+                      <p className="font-headline-sm text-base sm:text-headline-sm text-primary font-bold break-all">
                         contact@vkova.in
                       </p>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-0.5">
                         For institutional enquiries and partnerships
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
-                      <span className="material-symbols-outlined text-[24px]">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
+                      <span className="material-symbols-outlined text-[20px] sm:text-[24px]">
                         pin_drop
                       </span>
                     </div>
-                    <div>
-                      <p className="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">
+                    <div className="min-w-0">
+                      <p className="font-label-sm text-xs sm:text-sm text-on-surface-variant uppercase font-semibold">
                         Address
                       </p>
-                      <p className="font-body-md text-body-md text-on-surface font-semibold">
+                      <p className="font-body-md text-xs sm:text-sm md:text-base text-on-surface font-semibold">
                         Baroli Khalilabad, Sector 12
                       </p>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant">
+                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant">
                         Lucknow, Uttar Pradesh 226028
                       </p>
                     </div>
@@ -1496,53 +1491,53 @@ export default function Home() {
                 </div>
 
                 {/* Direct Message Form Card */}
-                <div className="lg:col-span-7 bg-surface-container-low p-8 lg:p-10 rounded-3xl shadow-sm border border-outline-variant/20">
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold mb-6">
+                <div className="lg:col-span-7 bg-surface-container-low p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-sm border border-outline-variant/20">
+                  <h3 className="font-headline-md text-xl sm:text-2xl text-primary font-bold mb-4 sm:mb-6">
                     Send Us a Direct Message
                   </h3>
 
                   {contactSubmitted && (
-                    <div className="mb-6 p-4 rounded-xl bg-tertiary-container/10 border-l-4 border-tertiary-container text-tertiary-container text-sm font-semibold">
+                    <div className="mb-5 sm:mb-6 p-3.5 sm:p-4 rounded-xl bg-tertiary-container/10 border-l-4 border-tertiary-container text-tertiary-container text-xs sm:text-sm font-semibold">
                       Message sent! Our support representative will respond
                       shortly.
                     </div>
                   )}
 
                   <form
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-4 sm:gap-6"
                     onSubmit={handleContactSubmit}
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
+                        <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                           Your Name
                         </label>
                         <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                          className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                           placeholder="Name"
                           required
                           type="text"
                         />
                       </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="font-label-md text-label-md text-on-surface font-semibold">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
+                        <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                           Your Mobile
                         </label>
                         <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                          className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                           placeholder="+91 94520 XXXXX"
                           required
                           type="tel"
                         />
                       </div>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Inquiry Subject
                       </label>
                       <select
                         defaultValue="Home Tuition Inquiry"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                       >
                         <option value="Home Tuition Inquiry">
                           Looking for Home Tutor
@@ -1554,19 +1549,19 @@ export default function Home() {
                         <option value="General Query">General Query</option>
                       </select>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="font-label-md text-label-md text-on-surface font-semibold">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+                      <label className="font-label-md text-xs sm:text-sm text-on-surface font-semibold">
                         Message
                       </label>
                       <textarea
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-surface-container-lowest text-on-surface text-base focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/30"
                         placeholder="Describe your query..."
                         required
                         rows={4}
                       ></textarea>
                     </div>
                     <button
-                      className="self-start inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-8 py-3.5 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md"
+                      className="w-full sm:w-auto self-start inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary font-label-md sm:font-label-lg text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-xl shadow-sm transition-all font-bold cursor-pointer hover:shadow-md text-center"
                       type="submit"
                     >
                       Send Message
@@ -1582,62 +1577,66 @@ export default function Home() {
       {/* FLOATING ACTION TRIGGERS */}
       <aside
         aria-label="Quick Contact Triggers"
-        className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2 sm:gap-3"
       >
         <a
           aria-label="Call Support"
-          className="flex items-center gap-2 bg-surface-container-lowest text-primary hover:bg-surface-container-high hover:text-on-surface px-4 py-3 rounded-full shadow-[0_4px_12px_rgba(27,42,51,0.08)] transition-all border border-outline-variant/30 hover:scale-105"
+          className="flex items-center gap-2 bg-surface-container-lowest text-primary hover:bg-surface-container-high hover:text-on-surface px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full shadow-[0_4px_16px_rgba(27,42,51,0.12)] transition-all border border-outline-variant/30 active:scale-95"
           href="tel:+919452000000"
         >
-          <span className="material-symbols-outlined text-[20px]">call</span>
-          <span className="hidden md:inline font-label-sm text-label-sm font-semibold">
+          <span className="material-symbols-outlined text-[18px] sm:text-[20px]">
+            call
+          </span>
+          <span className="hidden md:inline font-label-sm text-xs sm:text-sm font-semibold">
             Call Us
           </span>
         </a>
         <a
           aria-label="WhatsApp Instant Chat"
-          className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-[0_4px_16px_rgba(0,64,25,0.2)] transition-all hover:scale-105 font-semibold"
+          className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full shadow-[0_4px_16px_rgba(0,64,25,0.2)] transition-all active:scale-95 font-semibold"
           href="https://wa.me/919452000000"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span className="material-symbols-outlined text-[20px]">chat</span>
-          <span className="hidden md:inline font-label-sm text-label-sm">
+          <span className="material-symbols-outlined text-[18px] sm:text-[20px]">
+            chat
+          </span>
+          <span className="hidden md:inline font-label-sm text-xs sm:text-sm">
             Chat on WhatsApp
           </span>
         </a>
       </aside>
 
       {/* FOOTER */}
-      <footer className="w-full bg-surface-container-low pt-16 pb-12 border-t border-outline-variant/30">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+      <footer className="w-full bg-surface-container-low pt-12 pb-8 sm:pt-16 sm:pb-12 border-t border-outline-variant/30 overflow-x-hidden">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10 sm:gap-12">
           {/* Main Footer Multi-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
             {/* Column 1: Brand & Overview (Spans 2 columns on lg) */}
-            <div className="lg:col-span-2 flex flex-col gap-4">
+            <div className="sm:col-span-2 lg:col-span-2 flex flex-col gap-3.5 sm:gap-4">
               <div className="flex items-center gap-3">
                 <img
                   alt="VKOVA Official Logo"
-                  className="h-16 w-auto object-contain"
+                  className="h-12 sm:h-16 w-auto max-w-[160px] sm:max-w-none object-contain"
                   src="/VKOVA_Logo.png"
                 />
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-sm">
+              <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
                 Lucknow&apos;s premier educational platform connecting students with verified, compassionate home tutors and conducting rigorous, concept-driven offline coaching classes.
               </p>
-              <div className="flex flex-col gap-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
-                <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary text-[18px]">location_on</span>
+              <div className="flex flex-col gap-2 pt-1 text-on-surface-variant font-body-sm text-xs sm:text-sm">
+                <div className="flex items-start gap-2">
+                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">location_on</span>
                   <span>Baroli Khalilabad, Sector 12, Lucknow (UP) 226028</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary text-[18px]">call</span>
+                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0">call</span>
                   <a href="tel:+919452000000" className="hover:text-primary transition-colors font-medium">
                     +91 94520 XXXXX
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#25D366] text-[18px]">chat</span>
+                  <span className="material-symbols-outlined text-[#25D366] text-[18px] shrink-0">chat</span>
                   <a
                     href="https://wa.me/919452000000"
                     target="_blank"
@@ -1648,18 +1647,18 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary text-[18px]">schedule</span>
+                  <span className="material-symbols-outlined text-primary text-[18px] shrink-0">schedule</span>
                   <span>Mon – Sat: 8:00 AM – 8:00 PM</span>
                 </div>
               </div>
             </div>
 
             {/* Column 2: Academic Programs */}
-            <div className="flex flex-col gap-4">
-              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+            <div className="flex flex-col gap-3 sm:gap-4">
+              <h4 className="font-headline-sm text-sm sm:text-base text-primary font-bold tracking-tight">
                 Academic Programs
               </h4>
-              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+              <ul className="flex flex-col gap-2 font-body-sm text-xs sm:text-sm text-on-surface-variant">
                 <li>
                   <a href="#home-tuition" className="hover:text-primary transition-colors">
                     Home Tuition (Classes 1–12)
@@ -1704,11 +1703,11 @@ export default function Home() {
             </div>
 
             {/* Column 3: Quick Links */}
-            <div className="flex flex-col gap-4">
-              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+            <div className="flex flex-col gap-3 sm:gap-4">
+              <h4 className="font-headline-sm text-sm sm:text-base text-primary font-bold tracking-tight">
                 Quick Links
               </h4>
-              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+              <ul className="flex flex-col gap-2 font-body-sm text-xs sm:text-sm text-on-surface-variant">
                 <li>
                   <a href="#hero" className="hover:text-primary transition-colors">
                     Home
@@ -1748,11 +1747,11 @@ export default function Home() {
             </div>
 
             {/* Column 4: Lucknow Coverage & Support */}
-            <div className="flex flex-col gap-4">
-              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+            <div className="flex flex-col gap-3 sm:gap-4">
+              <h4 className="font-headline-sm text-sm sm:text-base text-primary font-bold tracking-tight">
                 Lucknow Coverage
               </h4>
-              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+              <ul className="flex flex-col gap-2 font-body-sm text-xs sm:text-sm text-on-surface-variant">
                 <li>
                   <a href="#request-tutor" className="hover:text-primary transition-colors">
                     Baroli Khalilabad
@@ -1793,11 +1792,11 @@ export default function Home() {
           </div>
 
           {/* Bottom Bar: Copyright & Policies */}
-          <div className="pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+          <div className="pt-6 sm:pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant text-center sm:text-left">
               © 2026 VKOVA Educational Institute. Excellence in Personalized Learning. All rights reserved.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 font-label-sm text-label-sm text-on-surface-variant">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-label-sm text-xs sm:text-sm text-on-surface-variant">
               <a href="#about" className="hover:text-primary transition-colors">
                 About
               </a>
