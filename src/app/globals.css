@@ -1,26 +1,149 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+@theme {
+  --color-primary: #003d48;
+  --color-primary-container: #0b5563;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #8cc8d8;
+  --color-secondary: #865300;
+  --color-secondary-container: #fdae49;
+  --color-secondary-fixed: #ffddb9;
+  --color-secondary-fixed-dim: #ffb963;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #6e4300;
+  --color-tertiary: #004019;
+  --color-tertiary-container: #005a26;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed: #66ff8e;
+  --color-tertiary-fixed-dim: #3de273;
+  --color-surface: #f5faff;
+  --color-surface-bright: #f5faff;
+  --color-surface-dim: #ccdce8;
+  --color-surface-variant: #d5e5f1;
+  --color-surface-container: #e0f0fc;
+  --color-surface-container-low: #e9f5ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #daeaf7;
+  --color-surface-container-highest: #d5e5f1;
+  --color-on-surface: #0e1d26;
+  --color-on-surface-variant: #40484b;
+  --color-outline: #70787b;
+  --color-outline-variant: #bfc8cb;
+  --color-background: #f5faff;
+  --color-on-background: #0e1d26;
+  --color-inverse-surface: #23323b;
+  --color-inverse-on-surface: #e3f3ff;
+  --color-inverse-primary: #93d0e0;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5faff;
+  --foreground: #0e1d26;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  overscroll-behavior: none;
+}
+
+/* Material Design Typography Classes matching Stitch Design */
+.font-display-hero,
+.font-headline-xl,
+.font-headline-lg,
+.font-headline-md,
+.font-headline-sm,
+.font-label-lg,
+.font-label-md,
+.font-label-sm {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+.font-body-lg,
+.font-body-md,
+.font-body-sm {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.text-display-hero {
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-xl {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.015em;
+}
+
+.text-headline-lg {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.text-headline-md {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.005em;
+}
+
+.text-headline-sm {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0em;
+}
+
+.text-label-lg {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+}
+
+.text-label-md {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.text-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.005em;
+}
+
+.text-body-md {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.text-body-sm {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
