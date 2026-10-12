@@ -201,6 +201,9 @@ export default function Home() {
                   <h1 className="font-display-hero text-headline-xl lg:text-display-hero text-primary tracking-tight leading-[1.1] font-bold">
                     Find the Right Tutor in Lucknow
                   </h1>
+                  <p className="font-headline-sm text-headline-sm lg:text-headline-md text-secondary font-bold tracking-wide uppercase">
+                    TUTORS AT HOME, SUCCESS EVERY TIME
+                  </p>
                   <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
                     VKOVA connects students with verified, compassionate home tutors
                     across Lucknow and conducts rigorous, concept-focused coaching
