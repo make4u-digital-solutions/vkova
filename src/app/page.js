@@ -45,12 +45,10 @@ export default function Home() {
           <a href="#hero" className="flex items-center gap-3 group">
             <img
               alt="VKOVA Official Logo"
-              className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Uk52qesUR_gltU6OL1r443gRHz4xOnqZvOkyKVH0AP7DKL7HKklfYEjnnuv_X6keyYveWj1fyR70DedDj2QM7K-lbaxgOpKCaphonW4pXrHpjSIVl1QBEIhZCLMwigZiFU90SNAkDCE9a8E66MyLJQr9IzEcQKtlkW1LqR97zJxOPHOagILSg6xSMCYalq7q5J2Yf-2FvYY8Rgb3pRyIo8E5vpM-6W9J2MjzUNG2tr8HQ1qfJ9Jlo2jdo"
+              className="h-17 w-auto object-contain transition-transform group-hover:scale-105"
+              src="/VKOVA_Logo.png"
             />
-            <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">
-              VKOVA
-            </span>
+            
           </a>
 
           {/* Desktop Nav */}
@@ -1086,7 +1084,7 @@ export default function Home() {
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLZGAs7mVtBUaI_pXnjy_lAd_vTRMdKwcvf5DGTqv2PJRjEm2g6jQlLx1tlw6ZbZ_Qq4xKZOa8Hyn1BQGkJGWxZFycWRL82JNiKmCz_51x82V-cbOTo7xUle2wiVbCU02A4ND81aoPe2QVsym-oidcFSNw7cLFq0VKXTMdXultb5z5JvtwnaqlV1srP2A7qRrKI6gTWqbV2nejy7iLft0b2tjwVSQm0WdpmQYsNGjFVMN0VgLg1f4t"
                     />
                     <div className="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-md">
-                      Admissions Open 2024-25
+                      Admissions Open 2026-27
                     </div>
                   </div>
                 </div>
@@ -1611,40 +1609,211 @@ export default function Home() {
       </aside>
 
       {/* FOOTER */}
-      <footer className="w-full bg-surface-container-low py-12 border-t border-outline-variant/30">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img
-              alt="VKOVA Official Logo"
-              className="h-6 w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Uk52qesUR_gltU6OL1r443gRHz4xOnqZvOkyKVH0AP7DKL7HKklfYEjnnuv_X6keyYveWj1fyR70DedDj2QM7K-lbaxgOpKCaphonW4pXrHpjSIVl1QBEIhZCLMwigZiFU90SNAkDCE9a8E66MyLJQr9IzEcQKtlkW1LqR97zJxOPHOagILSg6xSMCYalq7q5J2Yf-2FvYY8Rgb3pRyIo8E5vpM-6W9J2MjzUNG2tr8HQ1qfJ9Jlo2jdo"
-            />
-            <span className="font-headline-sm text-headline-sm text-primary font-bold">
-              VKOVA
-            </span>
+      <footer className="w-full bg-surface-container-low pt-16 pb-12 border-t border-outline-variant/30">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+          {/* Main Footer Multi-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+            {/* Column 1: Brand & Overview (Spans 2 columns on lg) */}
+            <div className="lg:col-span-2 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <img
+                  alt="VKOVA Official Logo"
+                  className="h-16 w-auto object-contain"
+                  src="/VKOVA_Logo.png"
+                />
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-sm">
+                Lucknow&apos;s premier educational platform connecting students with verified, compassionate home tutors and conducting rigorous, concept-driven offline coaching classes.
+              </p>
+              <div className="flex flex-col gap-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[18px]">location_on</span>
+                  <span>Baroli Khalilabad, Sector 12, Lucknow (UP) 226028</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[18px]">call</span>
+                  <a href="tel:+919452000000" className="hover:text-primary transition-colors font-medium">
+                    +91 94520 XXXXX
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[#25D366] text-[18px]">chat</span>
+                  <a
+                    href="https://wa.me/919452000000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors font-medium"
+                  >
+                    WhatsApp Support: Chat Instantly
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[18px]">schedule</span>
+                  <span>Mon – Sat: 8:00 AM – 8:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2: Academic Programs */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+                Academic Programs
+              </h4>
+              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+                <li>
+                  <a href="#home-tuition" className="hover:text-primary transition-colors">
+                    Home Tuition (Classes 1–12)
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Vkova Coaching Batches
+                  </a>
+                </li>
+                <li>
+                  <a href="#home-tuition" className="hover:text-primary transition-colors">
+                    CBSE Curriculum
+                  </a>
+                </li>
+                <li>
+                  <a href="#home-tuition" className="hover:text-primary transition-colors">
+                    ICSE & ISC Board Prep
+                  </a>
+                </li>
+                <li>
+                  <a href="#home-tuition" className="hover:text-primary transition-colors">
+                    UP State Board Coaching
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Foundation Batches (6th–8th)
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Board Prep (9th & 10th)
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Senior Secondary (11th & 12th)
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Quick Links */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+                Quick Links
+              </h4>
+              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+                <li>
+                  <a href="#hero" className="hover:text-primary transition-colors">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Request a Home Tutor
+                  </a>
+                </li>
+                <li>
+                  <a href="#join-tutor" className="hover:text-primary transition-colors">
+                    Join as a Tutor
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Admission Enquiry
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="hover:text-primary transition-colors">
+                    About VKOVA
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-primary transition-colors">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#coaching" className="hover:text-primary transition-colors">
+                    Center Directions
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Lucknow Coverage & Support */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-headline-sm text-base text-primary font-bold tracking-tight">
+                Lucknow Coverage
+              </h4>
+              <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Baroli Khalilabad
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Sector 12 & Indiranagar
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Gomti Nagar & Ext.
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Alambagh & Ashiyana
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Hazratganj & Mahanagar
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    Jankipuram & Vikas Nagar
+                  </a>
+                </li>
+                <li>
+                  <a href="#request-tutor" className="hover:text-primary transition-colors">
+                    All Lucknow Localities
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <p className="font-body-sm text-body-sm text-on-surface-variant text-center">
-            © 2024 VKOVA Educational Institute. Excellence in Personalized Learning.
-          </p>
-          <div className="flex items-center gap-6">
-            <a
-              className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors font-medium"
-              href="#about"
-            >
-              About
-            </a>
-            <a
-              className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors font-medium"
-              href="#contact"
-            >
-              Contact
-            </a>
-            <a
-              className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors font-medium"
-              href="#"
-            >
-              Privacy Policy
-            </a>
+
+          {/* Bottom Bar: Copyright & Policies */}
+          <div className="pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+              © 2026 VKOVA Educational Institute. Excellence in Personalized Learning. All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-6 font-label-sm text-label-sm text-on-surface-variant">
+              <a href="#about" className="hover:text-primary transition-colors">
+                About
+              </a>
+              <a href="#contact" className="hover:text-primary transition-colors">
+                Contact
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Terms & Conditions
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Refund Policy
+              </a>
+            </div>
           </div>
         </div>
       </footer>
