@@ -194,10 +194,10 @@ export default function Home() {
               {/* Top Grid: Copy & Hero Imagery */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 <div className="lg:col-span-7 flex flex-col gap-6">
-                  <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+                  {/* <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide uppercase">
                     <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
                     Premier Educational Network • Lucknow
-                  </div>
+                  </div> */}
                   <h1 className="font-display-hero text-headline-xl lg:text-display-hero text-primary tracking-tight leading-[1.1] font-bold">
                     Find the Right Tutor in Lucknow
                   </h1>
